@@ -1,0 +1,23 @@
+JS_EXPLICACION
+Lenguaje de programación interpretado y orientado a objetos.
+Conocido como el lenguaje de scripting para paginas web.
+Creado por Brendan Eich en 1995 en Netscape.
+Originalmente llamado "Mocha", luego "LiveScript".
+
+Se utiliza en backend y fronted
+FRONT: todo lo que el usuario ve e interactúa directamente en el navegador, HTML_CSS_JS
+BACK: todo el que ocurre en el servidor, procesamiento de datos_conexion a base de datos_logica de negocios_JAVA_C#_PYTHON
+
+Donde se ubica JS?
+ -Principalmente en el front 
+ -Manipula el DOM (document object model)
+ -Responde a eventos de usuarios
+ -Peticiones asíncronas (AJAX)
+ -Animaciones y efectos visuales
+
+BACKEND con node.Js (2009)
+ -JS en el servidor
+ -Creación de APIS
+ -Servidores web
+ -Microservicios
+
