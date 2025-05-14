@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscar Mayor o Menor</title>
+</head>
+<body>
+  <h2>Ingrese 10 valores</h2>
+  <div id="inputs"></div>
+  <button onclick="buscar()">Buscar</button>
+
+  <br><br>
+  <label><input type="radio" name="opcion" value="1"> Buscar Menor</label>
+  <label><input type="radio" name="opcion" value="2"> Buscar Mayor</label>
+
+  <p id="resultado"></p>
+
+  <script>
+    const inputsDiv = document.getElementById("inputs");
+    for (let i = 0; i < 10; i++) {
+      const input = document.createElement("input");
+      input.type = "number";
+      input.placeholder = `Valor ${i + 1}`;
+      input.id = `valor${i}`;
+      inputsDiv.appendChild(input);
+      inputsDiv.appendChild(document.createElement("br"));
+    }
+
+    function buscar() {
+      const valores = [];
+      for (let i = 0; i < 10; i++) {
+        const val = parseFloat(document.getElementById(`valor${i}`).value);
+        if (isNaN(val)) {
+          document.getElementById("resultado").textContent = "Por favor complete todos los campos.";
+          return;
+        }
+        valores.push(val);
+      }
+
+      const opcion = document.querySelector('input[name="opcion"]:checked');
+      if (!opcion) {
+        document.getElementById("resultado").textContent = "Debe seleccionar una opción.";
+        return;
+      }
+
+      let resultado;
+      if (opcion.value === "1") {
+        resultado = Math.min(...valores);
+        document.getElementById("resultado").textContent = `🔽 El menor valor es: ${resultado}`;
+      } else {
+        resultado = Math.max(...valores);
+        document.getElementById("resultado").textContent = `🔼 El mayor valor es: ${resultado}`;
+      }
+    }
+  </script>
+</body>
+</html>
