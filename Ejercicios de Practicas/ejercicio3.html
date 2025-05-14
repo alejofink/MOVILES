@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Edad</title>
+</head>
+<body>
+    <h1>Calculadora de Edad</h1>
+    <label for="nacimientoAño">Año de nacimiento:</label>
+    <input type="number" id="nacimientoAño" placeholder="Ejemplo: 1995" required>
+    <br>
+    <label for="nacimientoMes">Mes de nacimiento:</label>
+    <input type="number" id="nacimientoMes" placeholder="Ejemplo: 5" required>
+    <br>
+    <label for="nacimientoDia">Día de nacimiento:</label>
+    <input type="number" id="nacimientoDia" placeholder="Ejemplo: 20" required>
+    <br><br>
+    <button id="calcular">Calcular Edad</button>
+    <p id="resultadoEdad"></p>
+    <p id="diasCumpleaños"></p>
+
+    <script>
+        // Función para calcular la edad
+        function calcularEdad(añoNacimiento, mesNacimiento, diaNacimiento) {
+            const fechaNacimiento = new Date(añoNacimiento, mesNacimiento - 1, diaNacimiento);
+            const fechaActual = new Date();
+            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+            const mesActual = fechaActual.getMonth();
+            const diaActual = fechaActual.getDate();
+            
+            if (mesActual < mesNacimiento - 1 || (mesActual === mesNacimiento - 1 && diaActual < diaNacimiento)) {
+                edad--;
+            }
+
+            // Condicional para manejar errores
+            if (edad < 0) {
+                return "El año de nacimiento no puede ser futuro.";
+            } else if (edad > 120) {
+                return "¿Estás seguro de ese año?";
+            } else {
+                return `Tienes aproximadamente ${edad} años.`;
+            }
+        }
+
+        // Función para calcular los días hasta el próximo cumpleaños
+        function diasHastaCumpleaños(añoNacimiento, mesNacimiento, diaNacimiento) {
+            const fechaNacimiento = new Date(añoNacimiento, mesNacimiento - 1, diaNacimiento);
+            const fechaActual = new Date();
+            let proximoCumpleaños = new Date(fechaActual.getFullYear(), mesNacimiento - 1, diaNacimiento);
+            
+            if (proximoCumpleaños <= fechaActual) {
+                proximoCumpleaños.setFullYear(fechaActual.getFullYear() + 1);
+            }
+            
+            const diferencia = proximoCumpleaños - fechaActual;
+            return Math.ceil(diferencia / (1000 * 3600 * 24));
+        }
+
+        // Evento para calcular edad
+        document.getElementById("calcular").addEventListener("click", function() {
+            const añoNacimiento = document.getElementById("nacimientoAño").value;
+            const mesNacimiento = document.getElementById("nacimientoMes").value;
+            const diaNacimiento = document.getElementById("nacimientoDia").value;
+            
+            const resultadoEdad = calcularEdad(Number(añoNacimiento), Number(mesNacimiento), Number(diaNacimiento));
+            document.getElementById("resultadoEdad").textContent = resultadoEdad;
+
+            const diasRestantes = diasHastaCumpleaños(Number(añoNacimiento), Number(mesNacimiento), Number(diaNacimiento));
+            document.getElementById("diasCumpleaños").textContent = `Faltan ${diasRestantes} días para tu próximo cumpleaños.`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con JavaScript</title>
+</head>
+<body>
+    <h1>Interacción con JavaScript</h1>
+    <button id="miBoton">Haz clic aquí</button>
+    <button id="cambiarTamaño">Cambiar tamaño</button>
+    <button id="ponerCursiva">Poner cursiva</button>
+    <button id="restablecer">Restablecer</button>
+    <p id="resultado">Esperando clic...</p>
+    <p id="contador">Número de clics: 0</p>
+
+    <script>
+        // Seleccionar elementos del DOM
+        const boton = document.getElementById("miBoton");
+        const parrafo = document.getElementById("resultado");
+        const contador = document.getElementById("contador");
+        let clickCount = 0;
+
+        // Función para cambiar el texto y estilo
+        boton.addEventListener("click", function() {
+            clickCount++;
+            parrafo.textContent = "¡Has hecho clic en el botón!";
+            parrafo.style.color = "blue";
+            parrafo.style.fontWeight = "bold";
+            contador.textContent = `Número de clics: ${clickCount}`;
+        });
+
+        // Botón para cambiar el tamaño del texto
+        document.getElementById("cambiarTamaño").addEventListener("click", function() {
+            parrafo.style.fontSize = "20px";
+        });
+
+        // Botón para poner el texto en cursiva
+        document.getElementById("ponerCursiva").addEventListener("click", function() {
+            parrafo.style.fontStyle = "italic";
+        });
+
+        // Botón para restablecer el texto
+        document.getElementById("restablecer").addEventListener("click", function() {
+            parrafo.textContent = "Esperando clic...";
+            parrafo.style.color = "black";
+            parrafo.style.fontWeight = "normal";
+            parrafo.style.fontSize = "16px";
+            parrafo.style.fontStyle = "normal";
+            clickCount = 0;
+            contador.textContent = `Número de clics: ${clickCount}`;
+        });
+    </script>
+</body>
+</html>
