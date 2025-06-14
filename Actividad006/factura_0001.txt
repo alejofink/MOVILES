@@ -1,0 +1,35 @@
+==================================================
+ FACTURA DE PRODUCTOS
+==================================================
+
+Detalle de productos:
+--------------------------------------------------
+1. Laptop Gaming
+ Precio unitario: $1200.00
+ Descuento: 10%
+ Precio con descuento: $1080.00
+ Cantidad: 1
+ Subtotal: $1080.00
+
+2. Mouse Inalámbrico
+ Precio unitario: $25.00
+ Cantidad: 2
+ Subtotal: $50.00
+
+3. Monitor 24"
+ Precio unitario: $300.00
+ Descuento: 5%
+ Precio con descuento: $285.00
+ Cantidad: 1
+ Subtotal: $285.00
+
+4. Teclado Mecánico
+ Precio unitario: $80.00
+ Descuento: 15%
+ Precio con descuento: $68.00
+ Cantidad: 1
+ Subtotal: $68.00
+
+--------------------------------------------------
+TOTAL A PAGAR: $1483.00
+==================================================
