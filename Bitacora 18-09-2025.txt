@@ -1,0 +1,13 @@
+Clase 18/09/2025 
+
+React: 
+Una librería de JavaScript para crear interfaces de usuario.
+
+Permite construir aplicaciones web de forma más organizada y dinámica usando componentes.
+
+Vite: 
+Una herramienta moderna que facilita la creación de proyectos en React.
+
+Ofrece rapidez en la configuración y actualización del proyecto en tiempo real.
+
+Se realizó una breve práctica en la que agregamos un botón y un texto en pantalla.
