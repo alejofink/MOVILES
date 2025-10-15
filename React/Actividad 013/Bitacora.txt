@@ -1,0 +1,1 @@
+En esta clase vimos los Hoks dentro de React, los cuales son funciones especiales que permiten a los componentes de funcion utilizar estado y otras características de React (como el ciclo de vida) sin la necesidad de escribir componentes de clase.

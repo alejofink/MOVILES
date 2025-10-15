@@ -1,7 +1,7 @@
 import React from "react";
 import TarjetaPersonal from "./TarjetaPersonal";
 
-// Definimos los datos directamente, **sin usar la interfaz exportada**
+
 const datosTarjeta = {
   nombre: "Ale",
   puesto: "Desarrollador Web",
