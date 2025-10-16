@@ -1,0 +1,39 @@
+/* 🖋️ Contenedor del campo */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  color: #f8f8f8;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* 💡 Label elegante */
+.input-field label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #a2d2ff;
+}
+
+/* 🪄 Estilo del input */
+.input-field input {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 15px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔵 Efecto al enfocar */
+.input-field input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px #00e0ff;
+}
+
+/* ⚠️ Placeholder */
+.input-field input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}

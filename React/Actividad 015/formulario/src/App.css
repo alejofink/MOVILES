@@ -1,0 +1,21 @@
+/* 🎩 Estilo general del contenedor principal */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px;
+}
+
+/* ✨ Título principal */
+.app h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
