@@ -1,0 +1,15 @@
+React Native te permite hacer apps para Android e iOS usando JavaScript/TypeScript y la lógica de React. 
+Usás un solo código para ambas plataformas y el rendimiento es casi nativo porque usa componentes 
+reales del sistema.
+
+La arquitectura funciona con dos hilos: uno donde corre tu código JavaScript y 
+otro donde se dibuja la interfaz nativa. Para comunicarse usan el “Bridge”, que básicamente 
+traduce instrucciones de JS a comandos nativos.
+
+Los conceptos clave son los componentes (como View o Text), el JSX para 
+escribir la UI, y el uso de state y props para manejar datos.
+
+A diferencia de React web, React Native no usa HTML ni el DOM: usa sus propios componentes móviles.
+
+Expo simplifica todo el proceso, evita configuraciones nativas complicadas y con 
+Expo Go podés ver los cambios en tu celu en tiempo real escaneando un QR.
