@@ -1,7 +1,9 @@
-import { API_URL } from "@env";
+import { EXPO_PUBLIC_API_URL } from "@env";
 // URL base apuntando al backend. 
 // Debe incluir protocolo (http://), IP o dominio, puerto y ruta base.
 // En desarrollo local con Expo: usar la IP de la máquina y puerto donde corre Express.
+
+const API_URL = `${EXPO_PUBLIC_API_URL}/api/stock`;
 
 export async function getStock() {
   const response = await fetch(API_URL); //Peticion get

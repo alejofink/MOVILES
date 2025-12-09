@@ -40,10 +40,17 @@ router.put("/:id", async (req, res) => {
 //Elimina un documento
 router.delete("/:id", async (req, res) => {
   try {
-    await Stock.findByIdAndDelete(req.params.id); //Elimina por id
+    const eliminado = await Stock.findByIdAndDelete(req.params.id);
+
+    if (!eliminado) {
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+
+    res.json({ message: "Producto eliminado", eliminado });
   } catch (error) {
     res.status(500).json({ error: "Error al eliminar producto" });
   }
 });
+
 
 export default router;

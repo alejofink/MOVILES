@@ -71,13 +71,20 @@ export default function StockScreen() {
     }
 
     try {
-      await deleteStock(seleccionado._id!); //deleteStock hace DELETE el en back mediante un id existente
-      setStock(stock.filter((s) => s._id !== seleccionado._id)); //Elmina localmente el item del array para actualizar la UI
+      await deleteStock(seleccionado._id);
+
+      setSeleccionado(null);
+
+      setStock((prev) =>
+        prev.filter((s) => s._id !== seleccionado._id)
+      );
+      
       limpiarCampos();
     } catch (error) {
       console.log("Error al eliminar", error);
     }
   };
+
 
   const guardarCambios = async () => {
     if (!seleccionado) {
